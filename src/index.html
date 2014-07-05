@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Storyteller</title>
+    
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="../bower_components/leaflet-dist/leaflet.css" />
+    <link rel="stylesheet" href="../bower_components/font-awesome-bower/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Lato:400/Open+Sans:300">
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div id="map"></div>
+<script type='text/javascript'>//<![CDATA[
+;document.write("<script defer src='//HOST:3000/socket.io/socket.io.js'><\/script><script defer src='//HOST:3001/client/browser-sync-client.0.9.1.js'><\/script>".replace(/HOST/g, location.hostname));
+//]]></script>
+  </body>
+
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+  <script src="../bower_components/leaflet-dist/leaflet.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+  <!-- endbower -->
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      AppController.init();
+      Map.init();   
+    });
+  </script>
+
+</html>
