@@ -13,16 +13,16 @@ module.exports = function(grunt) {
 		
 		bowerInstall: {
 		  target: {
-	      src: 'src/index.html', // point to your HTML file
+	      src: 'example/index.html', // point to your HTML file
 		  }
 		},
 		
   	browserSync: {
  		 files: {
 		    src : [
-		      'src/css/*.css',
-		      'src/js/*.js',
-		      'src/*.html'
+		      'example/css/*.css',
+		      'example/js/*.js',
+		      'example/*.html'
 		    ],
 		  },
 		  options: {
