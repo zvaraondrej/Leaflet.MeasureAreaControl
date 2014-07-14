@@ -8361,6 +8361,7 @@ L.Control.Layers = L.Control.extend({
 		for (i in overlays) {
 			this._addLayer(overlays[i], i, true);
 		}
+		console.log(this._layers)
 	},
 
 	onAdd: function (map) {

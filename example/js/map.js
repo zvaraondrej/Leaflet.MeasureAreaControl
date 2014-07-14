@@ -4,6 +4,7 @@ var Map = (function(){
   var _testdata1;
   var _testdata2;
   var  polygon;
+  var _tool;
 
   var opts1 = {
     color: "#2A4F6E",
@@ -24,12 +25,26 @@ var Map = (function(){
     _testdata1 = _addTestData(data1, opts1);
     _testdata2 = _addTestData(data2, opts2);
     polygon = misc();
-    initializeMeasurmentTool();
 
-  }
+    var options = {geodesic: true};
+    var layers = [_testdata2, _testdata1];
+    var control = L.Control.measureAreaControl(options, layers).addTo(_map);
+    control.addLayer(polygon);
+    
+    var circle = L.circle([50.5, 30.5], 200).addTo(_map)
+    control.addLayer(circle);
 
-  function prt(arg){
-    return console.log(arg);
+    var l1 = new L.latLng(50.5, 30.5);
+    var l2 = new L.latLng(30.5, 50.5);
+    var polyline = L.polyline([l1,l2], {color: 'red'}).addTo(_map);
+    control.addLayer(polyline);
+
+    var marker = L.marker([55.5, 30.5]).addTo(_map);
+    // control.addLayer(marker);
+    control.removeLayer(marker);
+
+
+
   }
 
   function _addMap(){
@@ -50,21 +65,12 @@ var Map = (function(){
     return geojson;
   }
 
-  function initializeMeasurmentTool(){
-    options = {position: 'topleft'};
-    var layers = [_testdata1, _testdata2];
-    L.Control.measureAreaControl(options, layers).addTo(_map);
-    L.control.layers(layers).addTo(_map);
-  }
-
   function misc(){
     var polygon = L.polygon([
         [51.509, -0.08],
         [51.503, -0.06],
         [51.51, -0.047]
     ]).addTo(_map);
-     options = {position: 'topleft'};
-    // L.Control.measureAreaControl(options, [polygon]).addTo(_map);
     return polygon;
   }
 
