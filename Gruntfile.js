@@ -1,12 +1,3 @@
-/*
-npm install grunt --save-dev
-npm install grunt-bower-install --save-dev
-npm install grunt-contrib-jshint --save-dev
-npm install grunt-contrib-concat --save-dev
-npm install grunt-contrib-uglify --save-dev
-npm install grunt-browser-sync --save-dev
-*/
-
 module.exports = function(grunt) {
 
 	grunt.initConfig({
@@ -27,52 +18,26 @@ module.exports = function(grunt) {
 		  }
 		},
 
-		copy: {
-      files: {
-		    cwd: 'src', 
-		    src: 'index.html',           
-		    dest: 'build',   
-		    expand: true       
+		cssmin: {
+		  minify: {
+		    src: 'src/*.css',
+		    dest: 'dist/styles.min.css'
 		  }
-    },
+		},		
 
-		clean: {
-		  build: {
-		    src: [ 'dist' ]
-		  }
-		  scripts: {
-		    src: 'dist/*.js'
-		  }
-		},
-
-		//minify stylesheets
-		
-		//build js: check syntac
 		jshint: {
-      all: ['src/js/*.js'] 
+      all: ['src/*.js'] 
     },
 
-		//build js: concat
-		concat: {
-	    options: {
-	      separator: ';'
-	    },
-	    dist: {
-	      src: ['src/js/*.js'], 
-	      dest: 'dist/js/script.js'
-	    }
-	  },
-
-	  //build js: minify
 	  uglify: {
-		  build: {
-		    options: {
-		      mangle: false
-		    },
-		    files: {
-		      'dist/js/script.js': [ 'dist/**/*.js' ]
-		    }
-			}
+	    options: {
+	      mangle: false
+	    },
+	    my_target: {
+	    	files: {
+	     	 'dist/L.MeasureAreaControl.min.js': [ 'src/*.js' ]
+	    	}
+	    }
 		},
 	});
 
@@ -95,5 +60,5 @@ module.exports = function(grunt) {
   grunt.registerTask('debug', ['jshint']);
 
   //build javascript
-	grunt.registerTask('build', ['jshint', 'clean', 'copy', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('build', ['jshint', 'uglify', 'cssmin']);
 };

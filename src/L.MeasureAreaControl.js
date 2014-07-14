@@ -23,14 +23,12 @@ L.Polygon.Measure = L.Handler.extend({
 
   addHooks: function () {
     if (this._map) {
-      console.log("enabled");
       this.bindEventListener();
     }
   },
 
   removeHooks: function () {
     if (this._map) {
-      console.log("disabled");
       this.removeEventListener();
     }
   },
@@ -67,11 +65,10 @@ L.Polygon.Measure = L.Handler.extend({
   }
 });
 
-
 L.Control.MeasureArea = L.Control.extend({
 
     statics: {
-        TITLE: 'Measure polygon'
+        TITLE: 'Measure area'
     },
     options: {
         position: 'topleft',
@@ -123,7 +120,7 @@ L.Control.MeasureArea = L.Control.extend({
             var id = L.stamp(layer);
             this._layers[id] = {
               layer: layer
-            }
+            };
           }
         }
       } else {
@@ -131,13 +128,9 @@ L.Control.MeasureArea = L.Control.extend({
           var id = L.stamp(layers);
           this._layers[id] = {
             layer: layers
-          }
+          };
         }
       }
-
-      console.log("Layers registered in tool: ")
-      console.log(this._layers)
-      console.log("****************************************************************")
     },
 
     removeLayer: function (layers) {
@@ -151,9 +144,6 @@ L.Control.MeasureArea = L.Control.extend({
           var id = L.stamp(layers);
           delete this._layers[id];
       }
-      console.log("Layers in tool after removal: ")
-      console.log(this._layers)
-      console.log("****************************************************************")
       return this;
     },
 
