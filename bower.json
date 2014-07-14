@@ -1,7 +1,7 @@
 {
-  "name": "plugin",
-  "version": "0.0.0",
-  "homepage": "https://github.com/zvaraondrej/siteslider",
+  "name": "Leaflet.MeasureAreaControl",
+  "version": "1.0.0",
+  "homepage": "",
   "authors": [
     "zvaraondrej <zvara.ondrej@gmail.com>"
   ],
@@ -9,14 +9,11 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "lib"
   ],
   "dependencies": {
-    "leaflet-dist": "~0.7.2",
-    "leaflet.draw": "~0.2.3",
     "jquery": "~2.1.1",
+    "leaflet-dist": "~0.7.2",
     "font-awesome": "~4.1.0"
   }
 }

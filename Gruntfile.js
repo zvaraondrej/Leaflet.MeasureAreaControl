@@ -24,42 +24,29 @@ module.exports = function(grunt) {
 		      'example/js/*.js',
 		      'example/*.html'
 		    ],
-		  },
-		  options: {
-		     //watchTask: true
 		  }
 		},
 
-		//copy index.html
 		copy: {
       files: {
-		    cwd: 'src',  // set working folder / root to copy
+		    cwd: 'src', 
 		    src: 'index.html',           
-		    dest: 'build',    // destination folder
-		    expand: true           // required when using cwd
+		    dest: 'build',   
+		    expand: true       
 		  }
     },
 
 		clean: {
 		  build: {
-		    src: [ 'build' ]
-		  },
-		  stylesheets: {
-		    src: 'build/**/*.css',
-		  },
+		    src: [ 'dist' ]
+		  }
 		  scripts: {
-		    src: 'build/**/*.js'
-		  },
+		    src: 'dist/*.js'
+		  }
 		},
 
 		//minify stylesheets
-		cssmin: {
-		  minify: {
-		    src: 'src/css/*.css',
-		    dest: 'build/css/styles.min.css'
-		  }
-		},		
-
+		
 		//build js: check syntac
 		jshint: {
       all: ['src/js/*.js'] 
@@ -72,7 +59,7 @@ module.exports = function(grunt) {
 	    },
 	    dist: {
 	      src: ['src/js/*.js'], 
-	      dest: 'build/js/script.js'
+	      dest: 'dist/js/script.js'
 	    }
 	  },
 
@@ -83,7 +70,7 @@ module.exports = function(grunt) {
 		      mangle: false
 		    },
 		    files: {
-		      'build/js/script.js': [ 'build/**/*.js' ]
+		      'dist/js/script.js': [ 'dist/**/*.js' ]
 		    }
 			}
 		},

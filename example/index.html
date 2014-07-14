@@ -4,34 +4,42 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Storyteller</title>
+    <title>Leaflet.MeasureAreaControl</title>
     
     <!-- bower:css -->
-    <link rel="stylesheet" href="../bower_components/leaflet-dist/leaflet.css" />
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../lib/leaflet-dist/leaflet.css" />
+    <link rel="stylesheet" href="../lib/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Lato:400/Open+Sans:300">
+    <link rel="stylesheet" href="css/measureAreaControl.css" />
+
+    <style>
+      html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #map{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
 
     <!--[if lt IE 9]>
-
     <![endif]-->
   </head>
 
   <body>
     <div id="map"></div>
-<script type='text/javascript'>//<![CDATA[
-;document.write("<script defer src='//HOST:3000/socket.io/socket.io.js'><\/script><script defer src='//HOST:3001/client/browser-sync-client.0.9.1.js'><\/script>".replace(/HOST/g, location.hostname));
-//]]></script>
   </body>
 
   <!-- bower:js -->
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../bower_components/leaflet-dist/leaflet.js"></script>
+  <script src="../lib/jquery/dist/jquery.js"></script>
+  <script src="../lib/leaflet-dist/leaflet.js"></script>
   <!-- endbower -->
-  <script src="../bower_components/GeometryUtil/GeometryUtil.js"></script>
-  <script src="js/L.MeasureAreaControl.js"></script>
-  <script src="js/data.js"></script>
+  <script src="../lib/GeometryUtil/GeometryUtil.js"></script>
+  <script src="../src/L.MeasureAreaControl.js"></script>
   <script src="js/map.js"></script>
 
   <script type="text/javascript">
@@ -39,5 +47,4 @@
       Map.init(data1, data2);
     });
   </script>
-
 </html>
