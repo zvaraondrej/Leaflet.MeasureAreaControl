@@ -19,86 +19,72 @@ Implements [GeometryUtil.js] (https://github.com/Leaflet/Leaflet.draw/blob/maste
 
 ### API
 ####Constructor
-```
-   L.Control.measureAreaControl(options, layers[]);
-```
-```
-   L.Control.measureAreaControl(options);
-```
-```
-   L.Control.measureAreaControl();
-```
 
-| Constructor | Descrition 
-| --- | --- | --- | ---
-| L.Control.measureAreaControl(<Object> options, <Array> layers[]); | String
-| L.Control.measureAreaControl(<Object> options); | Desc
-| L.Control.measureAreaControl(); | Desc 
+| Constructor | Description 
+| --- | --- 
+| L.Control.measureAreaControl(Object options, Array layers[]); | Accepts options object and array of layers of different types
+| L.Control.measureAreaControl(Object options); | Accepts options object
+| L.Control.measureAreaControl(); | Uses default options
+
+The constructor accepts options, just like L.Control does. For more details about options see below. Second parameter is an array of layers of class [L.Polygon] (http://leafletjs.com/reference.html#polygon)/[L.Rectangle] (http://leafletjs.com/reference.html#rectangle) and [L.LayerGroup] (http://leafletjs.com/reference.html#layergroup) as well as all its children ([L.FeatureGroup] (http://leafletjs.com/reference.html#featuregroup) and [L.GeoJson] (http://leafletjs.com/reference.html#geojson), consisting of L.Polygon or L.Rectangle. [L.Circle] (http://leafletjs.com/reference.html#circle) and [L.CircleMarker] (http://leafletjs.com/reference.html#circlemarker) are NOT supported!
 
 ####Options
 | Property | Type | Default | Description
 | --- | --- | --- | ---
 | position | String | 'topright' | The position of the control. More [here] (http://leafletjs.com/reference.html#control-positions).
-| geodesic | Boolean | true | If true, returns walue in square meters. Else, returns hectares
+| geodesic | Boolean | true | If true, returns value in square meters. Else, returns hectares
 
 ####Methods 
-```
-   addLayer(L.Path);
-```
-```
-   L.Control.measureAreaControl();
-```
-```
-   L.Control.measureAreaControl();
-```
-```
-   L.Control.measureAreaControl();
-```
 
- control
-  control.addLayer(geojson);
+| method | Param | Description 
+| --- | --- | ---
+| addLayer(layer) | layers of different types (see note) | 
+| removeLayer(layer) | layers of different types (see note) | 
 
-### Usage examples
+Accepts same types of layers as constructor, but not as an array, but as single objects. L.Circle is NOT suported.
 
-code  example
+####Usage 
 
+Initialize tool and pass layers to constructor: 
+````// adding test data
+var geojson1 = L.geoJson(JSON.parse(data1),opts1).addTo(map);
+var geojson2= L.geoJson(JSON.parse(data2),opts2).addTo(map);
 
+// setting options 
+var options = {geodesic: true};
+   
+//input parameter is Array of layers
+var layers = [geojson1, geojson2];
 
+// initialize control
+var control = L.Control.measureAreaControl(options, layers).addTo(map);````
 
+You can add or remove layers also later:
+````var polygon = L.polygon([
+        [48.10804729138659, 17.106292247772217],
+        [48.10853443729303, 17.106292247772217],
+        [48.10853443729303, 17.1071720123291],
+        [48.10804729138659, 17.1071720123291],
+        [48.10804729138659, 17.106292247772217]
+    ]).addTo(_map);
+    control.addLayer(polygon);
+   // control.removeLayer(polygon);````
+    
 
+####Package instruction
 
+1. download and unpack repo
+2. cd *repo*
+3. sudo npm install
+4. grunt install
 
+...and you are up and running.
 
-Construktor:
+####TODO
+Feel free to propose, report or whatever.
 
-1)
-options = {position: 'topleft'};
-var layers = [_testdata2];
-L.Control.measureAreaControl(options, layers).addTo(_map);
+###Thanks
 
-2)
-L.Control.measureAreaControl(options)
-
-3)
-L.Control.measureAreaControl()
-
-
-**************************************************
-pridavanie a uberanie vrstiev
- control.addLayer(polygon);
-  control.addLayer(geojson);
-
-to iste pre removal
-
-*************************************************
-
-circles are not supported
-
-******
-
-sudo npm install
-grunt install
+Thanks to guys from [Leaflet.draw] (https://github.com/Leaflet/Leaflet.draw) for inspiration.
 
 
-*****
-TODO:
