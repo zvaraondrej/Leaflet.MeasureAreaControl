@@ -29,12 +29,14 @@ Implements [GeometryUtil.js] (https://github.com/Leaflet/Leaflet.draw/blob/maste
 The constructor accepts *options* object, just like L.Control does. For more details about *options* see below. Second parameter is an array of layers of class [L.Polygon] (http://leafletjs.com/reference.html#polygon)/[L.Rectangle] (http://leafletjs.com/reference.html#rectangle) and [L.LayerGroup] (http://leafletjs.com/reference.html#layergroup) as well as all its children ([L.FeatureGroup] (http://leafletjs.com/reference.html#featuregroup) and [L.GeoJson] (http://leafletjs.com/reference.html#geojson), consisting of L.Polygon or L.Rectangle. [L.Circle] (http://leafletjs.com/reference.html#circle) and [L.CircleMarker] (http://leafletjs.com/reference.html#circlemarker) are NOT supported!
 
 
+
 ####Options
 
 | Property | Type | Default | Description
 | --- | --- | --- | ---
 | position | String | 'topright' | The position of the control. More [here] (http://leafletjs.com/reference.html#control-positions).
 | geodesic | Boolean | true | If true, returns value in square meters. Else, returns hectares
+
 
 
 ####Methods 
@@ -45,6 +47,7 @@ The constructor accepts *options* object, just like L.Control does. For more det
 | removeLayer(layer) | layers of different types (see note) | 
 
 Accepts same types of layers as constructor, but not as an array, but as single objects. L.Circle is NOT suported.
+
 
 
 ####Usage 
@@ -80,6 +83,7 @@ You can add or remove layers also later:
 ```
 
 
+
 ####Package instruction
 
 1. download and unpack repo
@@ -89,8 +93,12 @@ You can add or remove layers also later:
 
 ...and you are up and running.
 
+
+
 ####TODO
 Feel free to propose, report or whatever.
+
+
 
 ###Thanks
 
