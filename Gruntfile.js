@@ -7,7 +7,15 @@ module.exports = function(grunt) {
 	      src: 'example/index.html', // point to your HTML file
 		  }
 		},
-		
+
+		"bower-install-simple": {
+        options: {
+            color:       true,
+            production:  false,
+            directory:   "lib"
+        }
+    },
+
   	browserSync: {
  		 files: {
 		    src : [
@@ -49,12 +57,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-bower-install');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks("grunt-bower-install-simple");
 
   //default
   grunt.registerTask('default', ['browserSync']);
 
   //install
-	grunt.registerTask('install', ['bowerInstall']);
+	grunt.registerTask('install', ['bower-install-simple', 'bowerInstall']);
 
 	//debugging
   grunt.registerTask('debug', ['jshint']);

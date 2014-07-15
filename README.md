@@ -23,4 +23,10 @@ to iste pre removal
 circles are not supported
 
 ******
+
+sudo npm install
+grunt install
+
+
+*****
 TODO:

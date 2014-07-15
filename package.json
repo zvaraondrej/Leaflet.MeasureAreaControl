@@ -3,29 +3,32 @@
   "version": "1.0.0",
   "description": "Leaflet plugin for measuring areas",
   "author": "Ondrej Zvara <zvara.ondrej@gmail.com> (http://ondrejzvara.sk/)",
-  "keywords": ["leaflet", "control", "measure", "area"],
+  "keywords": [
+    "leaflet",
+    "control",
+    "measure",
+    "area"
+  ],
   "homepage": "something",
   "repository": {
     "type": "git",
-    "url" : "https://github.com/zvaraondrej/L.MeasureAreaControl"
+    "url": "https://github.com/zvaraondrej/L.MeasureAreaControl"
   },
   "main": "dist/L.MeasureAreaControl.js",
   "style": "dist/L.MeasureAreaControl.min.css",
   "devDependencies": {
-    "grunt": "0.x.x",
+    "grunt": "~0.4.5",
     "grunt-bower-install": "1.x.x",
-    "grunt-contrib-jshint": "1.x.x",
+    "grunt-contrib-jshint": "0.x.x",
     "grunt-contrib-concat": "0.4.x",
     "grunt-contrib-uglify": "0.4.x",
     "grunt-browser-sync": "0.9.x",
-    "grunt-contrib-copy": "0.4.x",
-    "grunt-contrib-clean": "0.5.x",
     "grunt-contrib-cssmin": "0.6.x",
+    "grunt-bower-install-simple": "~0.9.3"
   },
   "license": {
     "type": "MIT",
     "url": "https://github.com/zvaraondrej/L.MeasureAreaControl/blob/master/LICENCE"
-  }
+  },
   "engine": "node >= 0.10"
 }
-

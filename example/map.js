@@ -60,7 +60,8 @@ var Map = (function(){
     var polyline = L.polyline([l1,l2,l3],{color: 'red'}).addTo(_map);
     control.addLayer(polyline);
 
-
+    // adding marker; note that marker will be not included, as it makes no sense
+    // this should make no effect
     var marker = L.marker([48.10622761731096,17.115561962127686]).addTo(_map);
     control.addLayer(marker);
   }

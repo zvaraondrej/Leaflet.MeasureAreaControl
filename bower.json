@@ -6,11 +6,6 @@
     "zvaraondrej <zvara.ondrej@gmail.com>"
   ],
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "lib"
-  ],
   "dependencies": {
     "jquery": "~2.1.1",
     "leaflet-dist": "~0.7.2",
