@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		cssmin: {
 		  minify: {
 		    src: 'src/*.css',
-		    dest: 'dist/styles.min.css'
+		    dest: 'dist/L.MeasureAreaControl.min.css'
 		  }
 		},		
 
