@@ -12,10 +12,13 @@ Implements [GeometryUtil.js] (https://github.com/Leaflet/Leaflet.draw/blob/maste
 
 ### Cross-browser compatibility
 
-+ IE
-+ Mozilla
-+ Chrome
-+ Opera
+Tested on:
++ IE8, IE9, IE10
++ Mozilla 30 (linux)
++ Mozilla 29.0.1 (win)
++ Chrome 35.0.1916.153 (linux)
++ Chrome 35.0.1916.153 (Win)
++ 
 
 ### API
 ####Constructor
@@ -43,8 +46,8 @@ The constructor accepts *options* object, just like L.Control does. For more det
 
 | method | Param | Description 
 | --- | --- | ---
-| addLayer(layer) | layers of different types (see note) | 
-| removeLayer(layer) | layers of different types (see note) | 
+| addLayer(layer) | layers of different types (see note) | accepts layers not in array
+| removeLayer(layer) | layers of different types (see note) | accepts layers not in array
 
 Accepts same types of layers as constructor, but not as an array, but as single objects. L.Circle is NOT suported.
 
