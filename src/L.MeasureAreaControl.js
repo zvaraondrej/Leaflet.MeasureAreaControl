@@ -113,10 +113,11 @@ L.Control.MeasureArea = L.Control.extend({
 
     addLayer: function (layers) {
 
-      if (layers instanceof L.LayerGroup){
+     if (layers instanceof L.LayerGroup){
         for (var i in layers._layers) {
           var layer = layers._layers[i];
-          if(layer instanceof L.Path && !(layer instanceof L.Circle)){
+          // if(layer instanceof L.Path && !(layer instanceof L.Circle)){
+          if(this.checkDataType(layer)){
             var id = L.stamp(layer);
             this._layers[id] = {
               layer: layer
@@ -124,7 +125,8 @@ L.Control.MeasureArea = L.Control.extend({
           }
         }
       } else {
-        if(layers instanceof L.Path && !(layers instanceof L.Circle)){
+        // if(layers instanceof L.Path && !(layers instanceof L.Circle)){
+        if(this.checkDataType(layers)){
           var id = L.stamp(layers);
           this._layers[id] = {
             layer: layers
@@ -145,6 +147,13 @@ L.Control.MeasureArea = L.Control.extend({
           delete this._layers[id];
       }
       return this;
+    },
+
+    checkDataType: function(layer){
+      if(layer instanceof L.Path && !(layer instanceof L.Circle) && ((layer instanceof L.Polygon) || (layer instanceof L.Rectangle)))
+        return true;
+      else
+        return false;
     },
 
     toggle: function() {
