@@ -1,4 +1,39 @@
+#L.MeasureAreaControl
+Simple Leaflet control for measuring element's area.
+
+Check the [demo](http://zvaraondrej.github.io/Leaflet.MeasureAreaControl/example/).
+
+Implements [GeometryUtil.js] (https://github.com/Leaflet/Leaflet.draw/blob/master/src/ext/GeometryUtil.js) by [Leaflet.draw]  (https://github.com/Leaflet/Leaflet.draw)
+
+
+### Requirements
+
++ Leaflet 0.7.3
++ Font-awesome 4.1.0
+
+
+### Cross-browser compatibility
+
++ IE
++ Mozilla
++ Chrome
++ Opera
+
+
+### Usage 
+
+code  example
+
+### API
+
+
+
+
+
+
+
 Construktor:
+
 1)
 options = {position: 'topleft'};
 var layers = [_testdata2];
