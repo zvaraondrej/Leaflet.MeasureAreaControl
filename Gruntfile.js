@@ -1,5 +1,15 @@
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-bower-install');
+  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks("grunt-bower-install-simple");
+
 	grunt.initConfig({
 		
 		bowerInstall: {
@@ -49,15 +59,7 @@ module.exports = function(grunt) {
 		},
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-bower-install');
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks("grunt-bower-install-simple");
+	
 
   //default
   grunt.registerTask('default', ['browserSync']);
@@ -66,7 +68,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('install', ['bower-install-simple', 'bowerInstall']);
 
 	//debugging
-  grunt.registerTask('debug', ['jshint']);
+  grunt.registerTask('jshint', ['jshint']);
 
   //build javascript
 	grunt.registerTask('build', ['jshint', 'uglify', 'cssmin']);

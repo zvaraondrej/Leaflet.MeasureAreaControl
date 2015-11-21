@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "jquery": "~2.1.1",
-    "leaflet-dist": "~0.7.2",
+    "leaflet": "1.0.0-beta.2",
     "font-awesome": "~4.1.0"
   }
 }
